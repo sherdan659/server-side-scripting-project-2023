@@ -9,6 +9,11 @@
             <div class="card-header card-title">
               <div class="d-flex align-items-center">
                 <h2 class="mb-0">All Cars</h2>
+
+                <div class="ml-auto">
+                  <a href="{{ route('cars.create') }}" class="btn btn-success"><i class="fa fa-plus-circle"></i> Add Car</a>
+                </div>
+
               </div>
             </div>
             <div class="row">
