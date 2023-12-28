@@ -62,5 +62,10 @@ class CarController extends Controller
         $cars->update($request->all());
         return redirect()->route('cars.index');
     }
-
+    public function delete ($id)
+    {
+        $cars = Car::find($id);
+        $cars->delete();
+        return back();
+    }
 }
