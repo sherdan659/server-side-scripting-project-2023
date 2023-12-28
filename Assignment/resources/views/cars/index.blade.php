@@ -9,11 +9,9 @@
             <div class="card-header card-title">
               <div class="d-flex align-items-center">
                 <h2 class="mb-0">All Cars</h2>
-
                 <div class="ml-auto">
                   <a href="{{ route('cars.create') }}" class="btn btn-success"><i class="fa fa-plus-circle"></i> Add Car</a>
                 </div>
-
               </div>
             </div>
             <div class="row">
@@ -55,7 +53,7 @@
                   <td>{{ $car->manufacturer->name }}</td>
                   <td width="150">
                     <a href="{{ route('cars.show', $car->id) }}" class="btn btn-sm btn-circle btn-outline-info" title="Show"><i class="fa fa-eye"></i></a>
-                    <a href="form.html" class="btn btn-sm btn-circle btn-outline-secondary" title="Edit"><i class="fa fa-edit"></i></a>
+                    <a href="{{ route('cars.edit', $car->id) }}" class="btn btn-sm btn-circle btn-outline-secondary" title="Edit"><i class="fa fa-edit"></i></a>
                     <a href="#" class="btn btn-sm btn-circle btn-outline-danger" title="Delete" onclick="confirm('Are you sure?')"><i class="fa fa-times"></i></a>
                   </td>
                 </tr>

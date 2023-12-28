@@ -5,7 +5,7 @@
         <div class="form-group row">
             <label for="model" class="col-md-3 col-form-label">model</label>
             <div class="col-md-9">
-              <input type="text" name="model" id="model" value="{{ old('model') }}" class="form-control @error('model') is-invalid @enderror">
+              <input type="text" name="model" id="model" value="{{ old('model' , $cars -> model) }}" class="form-control @error('model') is-invalid @enderror">
               @error('model')
               <div class="invalid-feedback">
                 {{ $message }}
@@ -18,7 +18,7 @@
         <div class="form-group row">
           <label for="year" class="col-md-3 col-form-label">Year</label>
           <div class="col-md-9">
-            <input type="text" name="year" id="year" value="{{ old('year') }}" class="form-control @error('year') is-invalid @enderror">
+            <input type="text" name="year" id="year" value="{{ old('year' , $cars -> year) }}" class="form-control @error('year') is-invalid @enderror">
             @error('year')
             <div class="invalid-feedback">
               {{ $message }}
@@ -30,7 +30,7 @@
         <div class="form-group row">
           <label for="salesperson_email" class="col-md-3 col-form-label">Sales Person Email</label>
           <div class="col-md-9">
-            <input type="text" name="salesperson_email" id="salesperson_email" value="{{ old('email') }}" class="form-control @error('salesperson_email') is-invalid @enderror">
+            <input type="text" name="salesperson_email" id="salesperson_email" value="{{ old('email' , $cars -> salesperson_email) }}" class="form-control @error('salesperson_email') is-invalid @enderror">
             @error('salesperson_email')
             <div class="invalid-feedback">
               {{ $message }}
@@ -45,7 +45,7 @@
           <div class="col-md-9">
             <select name="manufacturer_id" id="manufacturer_id" class="form-control @error('manufacturer_id') is-invalid @enderror">
               @foreach ($manufacturer as $id => $name)
-              <option {{ $id == old('manufacturer_id') ? 'selected' : '' }} value="{{ $id }}">{{ $name }}</option>
+              <option {{ $id == old('manufacturer_id' , $cars -> manufacturer_id) ? 'selected' : '' }} value="{{ $id }}">{{ $name }}</option>
               @endforeach
             </select>
             @error('manufacturer_id')
