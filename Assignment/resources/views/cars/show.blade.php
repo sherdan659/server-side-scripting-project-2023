@@ -45,7 +45,11 @@
                       <a href="{{ route('cars.edit', $cars->id) }}" class="btn btn-info">Edit</a>
                       <a href="{{ route('cars.delete', $cars->id) }}" class="btn-delete btn btn-outline-danger" >Delete</a>
                       <a href="{{ route('cars.index') }}" class="btn btn-outline-secondary">Cancel</a>
-                  </div>  
+                  </div>
+                  <form id="form-delete" method="POST" style="display: none">
+                    @method('DELETE')
+                    @csrf
+                  </form>    
                 </div>
               </div>
             </div>

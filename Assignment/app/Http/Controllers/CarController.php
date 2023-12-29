@@ -66,6 +66,6 @@ class CarController extends Controller
     {
         $cars = Car::find($id);
         $cars->delete();
-        return back();
+        return redirect()->route('cars.index');
     }
 }
